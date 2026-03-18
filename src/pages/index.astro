@@ -1,11 +1,483 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const services = [
+  {
+    number: '01',
+    title: 'Software & Web Development',
+    desc: 'Custom digital products built for performance, scalability, and real-world impact.',
+    items: [
+      'Custom Web Application Development',
+      'Mobile App Development',
+      'API Design & Development',
+      'Database Design & Architecture',
+    ],
+  },
+  {
+    number: '02',
+    title: 'Technical Consulting',
+    desc: 'Strategic technology guidance to align your systems with your business goals.',
+    items: [
+      'Software Architecture & System Design',
+      'Technology Stack Advisory',
+      'Code Review & Auditing',
+      'Legacy System Modernization',
+    ],
+  },
+  {
+    number: '03',
+    title: 'DevOps & Infrastructure',
+    desc: 'Robust pipelines and cloud infrastructure that keep your operations running smoothly.',
+    items: [
+      'Cloud Solutions & Migrations (AWS, GCP, Azure)',
+      'CI/CD Pipeline Setup',
+      'Infrastructure as Code',
+    ],
+  },
+  {
+    number: '04',
+    title: 'Data & Integrations',
+    desc: 'Turn your data into decisions with smart pipelines and business intelligence.',
+    items: [
+      'Third-Party API Integrations',
+      'Data Engineering & Pipeline Development',
+      'Business Intelligence & Reporting',
+    ],
+  },
+  {
+    number: '05',
+    title: 'Support & Maintenance',
+    desc: 'Ongoing technical support to keep your systems optimised and resilient.',
+    items: [
+      'Technical Due Diligence',
+      'Performance Optimisation',
+      'Ongoing Software Maintenance',
+    ],
+  },
+  {
+    number: '06',
+    title: 'Project & Business Management',
+    desc: 'End-to-end management, communications, and operational support services.',
+    items: [
+      'Project Management',
+      'Technical & Resume Writing',
+      'Communications Consultancy',
+      'Administrative Support',
+      'Event Management & Production',
+    ],
+  },
+];
+
+const solutions = [
+  {
+    badge: 'FINANCIAL',
+    title: 'CoreBanking Solution',
+    desc: 'A complete banking platform purpose-built for MicroFinance Institutions, Banks, and SACCOs. Handles accounts, lending, deposits, and reporting.',
+  },
+  {
+    badge: 'COMMUNICATIONS',
+    title: 'BulkSMS Platform',
+    desc: 'High-throughput SMS broadcasting for businesses, government bodies, and financial institutions. Personalised messaging at scale.',
+  },
+  {
+    badge: 'FINANCE',
+    title: 'Accounting Software',
+    desc: 'A comprehensive accounting and bookkeeping platform for SMEs and growing organisations. Real-time financials, invoicing, and compliance.',
+  },
+  {
+    badge: 'FINANCE',
+    title: 'Reconciliation Software',
+    desc: 'Automated transaction reconciliation to eliminate manual errors and accelerate financial close cycles for banks and fintechs.',
+  },
+  {
+    badge: 'EDUCATION',
+    title: 'DigiKid',
+    desc: 'A student tracking and progress management system for schools. Real-time attendance, performance analytics, and parent communication tools.',
+  },
+];
+
+const whyPoints = [
+  {
+    number: '01',
+    title: 'Full-Spectrum Capability',
+    text: 'From writing a single API to architecting an entire banking platform — we cover the full technology stack and business operations spectrum.',
+  },
+  {
+    number: '02',
+    title: 'Industry-Specific Expertise',
+    text: 'We have deep roots in financial services, education technology, and enterprise systems — not just generic software development.',
+  },
+  {
+    number: '03',
+    title: 'Ready When You Are',
+    text: 'With off-the-shelf solutions and a rapid deployment model, we can have you running in days, not months.',
+  },
+  {
+    number: '04',
+    title: 'Partnership, Not Just Delivery',
+    text: 'We stay involved beyond go-live. Your success is our success — that’s the Solvari commitment.',
+  },
+];
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Solvari Consulting" description="Many problems. One solution.">
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-grain"></div>
+
+    <div class="hero-content">
+      <div class="hero-eyebrow"><span>IT SERVICES &amp; PROJECT MANAGEMENT</span></div>
+      <h1 class="hero-h1">
+        Many Problems.<br />
+        <span class="line2">One Solution.</span>
+      </h1>
+      <p class="hero-tagline">Solving forward. Always.</p>
+      <p class="hero-desc">
+        Solvari Consultancy delivers expert technology and management solutions — from custom software and cloud infrastructure to project delivery and business communications.
+      </p>
+      <div class="hero-actions">
+        <button class="btn-primary" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">
+          EXPLORE SERVICES
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+        <button class="btn-ghost" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">START A PROJECT</button>
+      </div>
+    </div>
+
+    <div class="hero-mark">
+      <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="200,20 370,110 370,290 200,380 30,290 30,110" fill="rgba(6,36,32,0.6)" stroke="#14D4B8" stroke-width="2"/>
+        <polygon points="200,10 380,107 380,293 200,390 20,293 20,107" fill="none" stroke="#14B8A0" stroke-width="0.8" opacity="0.3"/>
+        <polygon points="200,40 350,122 350,278 200,360 50,278 50,122" fill="none" stroke="#14B8A0" stroke-width="0.5" opacity="0.15"/>
+        <path d="M120,160 L180,110 L220,110 L280,160 L280,210 L220,240 L180,240 L120,272 L120,310 L180,350 L280,295" fill="none" stroke="white" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="200" cy="110" r="18" fill="#14D4B8"/>
+        <circle cx="200" cy="240" r="18" fill="#14D4B8"/>
+        <circle cx="280" cy="210" r="12" fill="#14B8A0" opacity="0.8"/>
+        <circle cx="120" cy="272" r="12" fill="#14B8A0" opacity="0.6"/>
+      </svg>
+    </div>
+
+    <div class="hero-stats">
+      <div class="stat"><div class="num">8+</div><div class="label">SERVICE AREAS</div></div>
+      <div class="stat"><div class="num">2</div><div class="label">FOUNDERS</div></div>
+      <div class="stat"><div class="num">100%</div><div class="label">PROBLEM FOCUSED</div></div>
+      <div class="stat"><div class="num">∞</div><div class="label">SOLUTIONS DELIVERED</div></div>
+    </div>
+  </section>
+
+  <div class="marquee-strip">
+    <div class="marquee-inner">
+      {['SOFTWARE DEVELOPMENT', 'CLOUD SOLUTIONS', 'PROJECT MANAGEMENT', 'TECHNICAL CONSULTING', 'DATA ENGINEERING', 'CORE BANKING', 'DEVOPS', 'TECHNICAL WRITING'].map((item) => (
+        <span class="marquee-item">{item}</span>
+      ))}
+      {['SOFTWARE DEVELOPMENT', 'CLOUD SOLUTIONS', 'PROJECT MANAGEMENT', 'TECHNICAL CONSULTING', 'DATA ENGINEERING', 'CORE BANKING', 'DEVOPS', 'TECHNICAL WRITING'].map((item) => (
+        <span class="marquee-item">{item}</span>
+      ))}
+    </div>
+  </div>
+
+  <section id="services" class="section">
+    <div class="section-inner">
+      <div class="s-label reveal">02 &nbsp; WHAT WE DO</div>
+      <h2 class="s-title reveal reveal-delay-1">
+        Our <em>Services</em>
+      </h2>
+      <p class="s-sub reveal reveal-delay-2">
+        From idea to deployment — we cover every dimension of your technology and management needs.
+      </p>
+
+      <div class="services-grid reveal reveal-delay-1">
+        {services.map((service) => (
+          <div class="service-card">
+            <div class="sc-num">{service.number}</div>
+            <div class="sc-title">{service.title}</div>
+            <div class="sc-desc">{service.desc}</div>
+            <ul class="sc-items">
+              {service.items.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="solutions" class="section">
+    <div class="section-inner">
+      <div class="s-label reveal">03 &nbsp; READY SOLUTIONS</div>
+      <h2 class="s-title reveal reveal-delay-1">
+        Off-the-shelf <em>Products</em>
+      </h2>
+      <p class="s-sub reveal reveal-delay-2">
+        Purpose-built software solutions ready to deploy for your industry — customisable, scalable, and proven.
+      </p>
+
+      <div class="solutions-grid">
+        {solutions.map((solution, idx) => (
+          <div class="sol-card reveal reveal-delay-{Math.min(idx + 1, 3)}">
+            <span class="sol-badge">{solution.badge}</span>
+            <div class="sol-title">{solution.title}</div>
+            <div class="sol-desc">{solution.desc}</div>
+            <div class="sol-link">
+              LEARN MORE
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="#14D4B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+          </div>
+        ))}
+        <div class="sol-card reveal reveal-delay-3" style="border-style:dashed;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:rgba(20,184,160,0.02)">
+          <div style="font-size:36px;color:var(--t400);margin-bottom:16px">+</div>
+          <div class="sol-title" style="font-size:16px">Custom Solution</div>
+          <div class="sol-desc">Don't see what you need? We build bespoke software tailored precisely to your organisation's requirements.</div>
+          <div class="sol-link" style="justify-content:center">
+            TALK TO US
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="#14D4B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="why" class="section">
+    <div class="section-inner">
+      <div class="why-layout">
+        <div>
+          <div class="s-label reveal">04 &nbsp; WHY SOLVARI</div>
+          <h2 class="s-title reveal reveal-delay-1">
+            Built to solve.<br />
+            <em>Made to deliver.</em>
+          </h2>
+          <p class="s-sub reveal reveal-delay-2" style="margin-bottom:40px">
+            Our name says it all — Solve + Vari. Many problems, one solution. We bring breadth of expertise with depth of execution.
+          </p>
+
+          <div class="why-points">
+            {whyPoints.map((point, idx) => (
+              <div class={`why-point reveal reveal-delay-${idx + 1}`}>
+                <div class="wp-num">{point.number}</div>
+                <div class="wp-body">
+                  <div class="wp-title">{point.title}</div>
+                  <div class="wp-text">{point.text}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div class="why-visual reveal reveal-delay-2">
+          <div class="why-hex-cluster">
+            <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <polygon points="200,60 290,110 290,210 200,260 110,210 110,110" fill="rgba(6,36,32,0.8)" stroke="#14D4B8" stroke-width="1.5"/>
+              <path d="M165,148 L187,128 L213,128 L235,148 L235,168 L213,178 L187,178 L165,190 L165,200 L187,215 L235,200" fill="none" stroke="white" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="200" cy="128" r="7" fill="#14D4B8"/>
+              <circle cx="200" cy="178" r="7" fill="#14D4B8"/>
+              <polygon points="200,10 228,26 228,58 200,74 172,58 172,26" fill="rgba(6,36,32,0.5)" stroke="#14B8A0" stroke-width="1" opacity="0.7"/>
+              <text x="200" y="46" text-anchor="middle" font-family="Barlow,sans-serif" font-size="9" font-weight="500" fill="#14D4B8" letter-spacing="0">DEV</text>
+              <polygon points="320,100 348,116 348,148 320,164 292,148 292,116" fill="rgba(6,36,32,0.5)" stroke="#14B8A0" stroke-width="1" opacity="0.7"/>
+              <text x="320" y="136" text-anchor="middle" font-family="Barlow,sans-serif" font-size="8" font-weight="500" fill="#14D4B8">CLOUD</text>
+              <polygon points="320,240 348,256 348,288 320,304 292,288 292,256" fill="rgba(6,36,32,0.5)" stroke="#14B8A0" stroke-width="1" opacity="0.7"/>
+              <text x="320" y="276" text-anchor="middle" font-family="Barlow,sans-serif" font-size="9" font-weight="500" fill="#14D4B8">DATA</text>
+              <polygon points="200,310 228,326 228,358 200,374 172,358 172,326" fill="rgba(6,36,32,0.5)" stroke="#14B8A0" stroke-width="1" opacity="0.7"/>
+              <text x="200" y="346" text-anchor="middle" font-family="Barlow,sans-serif" font-size="9" font-weight="500" fill="#14D4B8">PM</text>
+              <polygon points="80,240 108,256 108,288 80,304 52,288 52,256" fill="rgba(6,36,32,0.5)" stroke="#14B8A0" stroke-width="1" opacity="0.7"/>
+              <text x="80" y="276" text-anchor="middle" font-family="Barlow,sans-serif" font-size="8" font-weight="500" fill="#14D4B8">WRITE</text>
+              <polygon points="80,100 108,116 108,148 80,164 52,148 52,116" fill="rgba(6,36,32,0.5)" stroke="#14B8A0" stroke-width="1" opacity="0.7"/>
+              <text x="80" y="136" text-anchor="middle" font-family="Barlow,sans-serif" font-size="9" font-weight="500" fill="#14D4B8">OPS</text>
+              <line x1="200" y1="74" x2="200" y2="108" stroke="#14B8A0" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.4"/>
+              <line x1="290" y1="140" x2="292" y2="140" stroke="#14B8A0" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.4"/>
+              <line x1="290" y1="200" x2="292" y2="272" stroke="#14B8A0" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.4"/>
+              <line x1="200" y1="260" x2="200" y2="310" stroke="#14B8A0" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.4"/>
+              <line x1="110" y1="200" x2="108" y2="272" stroke="#14B8A0" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.4"/>
+              <line x1="110" y1="140" x2="108" y2="140" stroke="#14B8A0" stroke-width="0.8" stroke-dasharray="3 3" opacity="0.4"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="section-inner">
+      <div class="about-layout">
+        <div class="about-text">
+          <div class="s-label reveal">05 &nbsp; ABOUT US</div>
+          <p class="big-q reveal reveal-delay-1">
+            "We turn complexity into clarity — by pairing data, design, and delivery into one seamless approach."
+          </p>
+          <p class="reveal reveal-delay-2">
+            At Solvari Consultancy, every project begins with the question: what’s the real problem we’re solving? We combine systems thinking, product strategy, and engineering discipline to design solutions that actually change how teams work.
+          </p>
+          <p class="reveal reveal-delay-3">
+            From Nairobi to global markets, we help organisations in finance, education, and operations move faster by turning messy processes into predictable platforms.
+          </p>
+          <div class="about-values reveal reveal-delay-2">
+            <div class="av-item">
+              <div class="av-title">INTEGRITY</div>
+              <div class="av-text">We deliver what we promise, with full transparency throughout.</div>
+            </div>
+            <div class="av-item">
+              <div class="av-title">INNOVATION</div>
+              <div class="av-text">We stay ahead of the curve so our clients don't have to.</div>
+            </div>
+            <div class="av-item">
+              <div class="av-title">IMPACT</div>
+              <div class="av-text">Success is measured by client outcomes, not project completion.</div>
+            </div>
+            <div class="av-item">
+              <div class="av-title">PRECISION</div>
+              <div class="av-text">Every deliverable is crafted with attention to detail that matters.</div>
+            </div>
+          </div>
+        </div>
+        <div class="about-img-wrap reveal reveal-delay-3">
+          <div class="about-card">
+            <div class="big-stat">20+</div>
+            <div class="big-label">PROJECTS DELIVERED</div>
+            <div class="about-founders">
+              <div class="founder">
+                <div class="founder-avatar">🧭</div>
+                <div class="founder-info">
+                  <div class="f-name">Problem-led Strategy</div>
+                  <div class="f-role">We start with the question, not the solution.</div>
+                </div>
+              </div>
+              <div class="founder">
+                <div class="founder-avatar">⚙️</div>
+                <div class="founder-info">
+                  <div class="f-name">Practical Delivery</div>
+                  <div class="f-role">Real-world tooling, built for busy teams.</div>
+                </div>
+              </div>
+            </div>
+            <div style="margin-top:28px;padding-top:20px;border-top:1px solid rgba(20,184,160,0.1)">
+              <div style="font-family:var(--serif);font-style:italic;font-size:16px;color:var(--t300);opacity:0.7;line-height:1.6">
+                Many Problems.<br />One Solution.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="section-inner">
+      <div class="s-label reveal">06 &nbsp; GET IN TOUCH</div>
+      <h2 class="s-title reveal reveal-delay-1">Let's solve <em>your</em> problem.</h2>
+      <p class="s-sub reveal reveal-delay-2">
+        Tell us what you're working on. We'll respond within 24 hours with a clear path forward.
+      </p>
+      <div class="contact-layout">
+        <div class="contact-info reveal reveal-delay-1">
+          <div class="ci-item">
+            <div class="ci-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z" fill="currentColor" />
+              </svg>
+            </div>
+            <div>
+              <div class="ci-label">LOCATION</div>
+              <div class="ci-value">Nairobi, Kenya</div>
+            </div>
+          </div>
+          <div class="ci-item">
+            <div class="ci-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="currentColor" />
+              </svg>
+            </div>
+            <div>
+              <div class="ci-label">EMAIL</div>
+              <div class="ci-value">info@solvariconsultancy.com</div>
+            </div>
+          </div>
+          <div class="ci-item">
+            <div class="ci-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" fill="currentColor" />
+              </svg>
+            </div>
+            <div>
+              <div class="ci-label">PHONE</div>
+              <div class="ci-value">+254 700 000 000</div>
+            </div>
+          </div>
+          <div class="ci-item">
+            <div class="ci-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="currentColor" />
+              </svg>
+            </div>
+            <div>
+              <div class="ci-label">AVAILABILITY</div>
+              <div class="ci-value">Mon – Fri, 8am – 6pm EAT</div>
+            </div>
+          </div>
+          <div style="margin-top:40px;padding:28px;background:rgba(20,184,160,0.05);border:1px solid rgba(20,184,160,0.1);border-radius:8px">
+            <p style="font-family:var(--serif);font-style:italic;font-size:20px;color:var(--t300);line-height:1.5">
+              "The first step to solving any problem is deciding to tackle it."
+            </p>
+            <p style="font-size:11px;letter-spacing:2px;color:rgba(20,184,160,0.35);margin-top:12px">— SOLVARI CONSULTANCY</p>
+          </div>
+        </div>
+
+        <div class="contact-form reveal reveal-delay-2">
+          <div class="form-row">
+            <div class="field">
+              <label>FIRST NAME</label>
+              <input type="text" placeholder="John" />
+            </div>
+            <div class="field">
+              <label>LAST NAME</label>
+              <input type="text" placeholder="Doe" />
+            </div>
+          </div>
+          <div class="field">
+            <label>EMAIL ADDRESS</label>
+            <input type="email" placeholder="john@company.com" />
+          </div>
+          <div class="field">
+            <label>ORGANISATION</label>
+            <input type="text" placeholder="Your company or institution" />
+          </div>
+          <div class="field">
+            <label>SERVICE OF INTEREST</label>
+            <select>
+              <option value="" disabled selected>Select a service...</option>
+              <option>Software &amp; Web Development</option>
+              <option>Technical Consulting</option>
+              <option>DevOps &amp; Infrastructure</option>
+              <option>Data &amp; Integrations</option>
+              <option>Support &amp; Maintenance</option>
+              <option>CoreBanking Solution</option>
+              <option>BulkSMS Platform</option>
+              <option>Accounting Software</option>
+              <option>Reconciliation Software</option>
+              <option>DigiKid</option>
+              <option>Project Management</option>
+              <option>Technical Writing</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>MESSAGE</label>
+            <textarea placeholder="Tell us about your project, challenge, or question..."></textarea>
+          </div>
+          <button class="form-submit">
+            SEND MESSAGE
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
 </Layout>

@@ -1,0 +1,43 @@
+---
+import type { ServiceCategory } from '../data/services';
+
+export interface Props {
+  category: ServiceCategory;
+}
+
+const { title, description, items } = Astro.props.category;
+---
+
+<section class="space-y-4 rounded-2xl border border-slate-200 bg-white/60 p-6 shadow-sm backdrop-blur dark:border-slate-700 dark:bg-slate-950/40">
+  <header>
+    <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-100">{title}</h3>
+    {description ? <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">{description}</p> : null}
+  </header>
+
+  <ul class="grid gap-3 text-sm sm:grid-cols-2">
+    {items.map((item) => (
+      <li
+        key={item.slug}
+        class="group rounded-xl border border-slate-200 bg-white shadow-sm transition-transform duration-200 hover:-translate-y-1 hover:shadow-lg hover:border-indigo-300 hover:ring-1 hover:ring-indigo-200 dark:border-slate-800 dark:bg-slate-950 dark:hover:border-indigo-400 dark:hover:ring-indigo-500/20"
+      >
+        <a href={`/services/${item.slug}`} class="flex gap-3 p-4">
+          <div class="relative h-12 w-12 flex-none overflow-hidden rounded-lg">
+            <img
+              src={item.image ?? '/images/services/placeholder.svg'}
+              alt=""
+              class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
+            />
+            <div class="absolute inset-0 bg-gradient-to-tr from-white/20 via-transparent to-white/0 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+          </div>
+          <div class="flex-1">
+            <p class="text-sm font-semibold text-slate-900 dark:text-white">{item.title}</p>
+            {item.description ? (
+              <p class="mt-1 text-xs leading-relaxed text-slate-600 dark:text-slate-300">{item.description}</p>
+            ) : null}
+          </div>
+          <span class="self-center text-indigo-500 transition group-hover:text-indigo-600 dark:text-indigo-300">›</span>
+        </a>
+      </li>
+    ))}
+  </ul>
+</section>

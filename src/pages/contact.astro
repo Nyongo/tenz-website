@@ -1,0 +1,90 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contact — Solvari Consulting" description="Reach out to discuss your next project or operational improvement.">
+  <section class="grid gap-10 lg:grid-cols-[1fr_380px]">
+    <div class="space-y-6">
+      <header class="space-y-2">
+        <h1 class="text-3xl font-semibold tracking-tight text-slate-900 dark:text-white">Let’s start a conversation</h1>
+        <p class="max-w-2xl text-base leading-relaxed text-slate-600 dark:text-slate-300">
+          Share the key details about your situation and we’ll follow up with a short plan for next steps.
+        </p>
+      </header>
+
+      <form
+        class="space-y-5 rounded-2xl border border-slate-200 bg-white/60 p-8 shadow-sm backdrop-blur dark:border-slate-800 dark:bg-slate-950/40"
+        action="mailto:hello@solvari.consulting"
+        method="post"
+        encType="text/plain"
+      >
+        <div class="grid gap-5 sm:grid-cols-2">
+          <label class="space-y-2 text-sm font-medium text-slate-700 dark:text-slate-200">
+            <span>Name</span>
+            <input
+              name="name"
+              type="text"
+              required
+              class="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 shadow-sm outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:focus:border-indigo-400 dark:focus:ring-indigo-500/30"
+            />
+          </label>
+
+          <label class="space-y-2 text-sm font-medium text-slate-700 dark:text-slate-200">
+            <span>Email</span>
+            <input
+              name="email"
+              type="email"
+              required
+              class="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 shadow-sm outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:focus:border-indigo-400 dark:focus:ring-indigo-500/30"
+            />
+          </label>
+        </div>
+
+        <label class="space-y-2 text-sm font-medium text-slate-700 dark:text-slate-200">
+          <span>Project details</span>
+          <textarea
+            name="message"
+            rows="6"
+            required
+            class="w-full resize-none rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 shadow-sm outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:focus:border-indigo-400 dark:focus:ring-indigo-500/30"
+          ></textarea>
+        </label>
+
+        <button
+          type="submit"
+          class="inline-flex items-center justify-center rounded-full bg-indigo-600 px-6 py-3 text-sm font-semibold text-white shadow hover:bg-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+        >
+          Send message
+        </button>
+
+        <p class="text-xs text-slate-500 dark:text-slate-400">
+          Tip: If you’d prefer, you can also email us at <a class="font-medium text-indigo-600 hover:text-indigo-500" href="mailto:hello@solvari.consulting">hello@solvari.consulting</a>.
+        </p>
+      </form>
+    </div>
+
+    <aside class="space-y-6 rounded-2xl border border-slate-200 bg-white/60 p-8 shadow-sm backdrop-blur dark:border-slate-800 dark:bg-slate-950/40">
+      <div class="space-y-3">
+        <h2 class="text-xl font-semibold text-slate-900 dark:text-white">Need support?</h2>
+        <p class="text-sm text-slate-600 dark:text-slate-300">
+          We’re happy to jump on a quick call to clarify scope, estimate timelines, or discuss long-term roadmaps.
+        </p>
+      </div>
+
+      <dl class="grid gap-4 text-sm text-slate-700 dark:text-slate-200">
+        <div>
+          <dt class="font-semibold text-slate-900 dark:text-white">Email</dt>
+          <dd class="mt-1">hello@solvari.consulting</dd>
+        </div>
+        <div>
+          <dt class="font-semibold text-slate-900 dark:text-white">Availability</dt>
+          <dd class="mt-1">Mon–Fri, 9am–6pm (UTC)</dd>
+        </div>
+        <div>
+          <dt class="font-semibold text-slate-900 dark:text-white">Response time</dt>
+          <dd class="mt-1">Usually within 24 hours</dd>
+        </div>
+      </dl>
+    </aside>
+  </section>
+</Layout>

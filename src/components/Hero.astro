@@ -1,0 +1,48 @@
+---
+// Hero section inspired by the provided one‑pager, with wordmark + tagline + scroll hint.
+---
+
+<section id="hero" class="relative min-h-[70vh] overflow-hidden">
+  <div class="absolute inset-0 bg-dark-1/70" />
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(20,212,184,0.4),transparent_60%)]" />
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_right,rgba(20,184,160,0.18),transparent_75%)]" />
+  <div class="absolute inset-0 bg-[linear-gradient(90deg,rgba(20,184,160,0.05)_0%,rgba(20,184,160,0.05)_1px,transparent_0)] bg-[length:60px_60px]" />
+
+  <div class="relative mx-auto flex min-h-[70vh] max-w-6xl flex-col items-center justify-center px-6 text-center">
+    <p class="mb-10 text-xs font-medium tracking-widest text-teal-300 opacity-80 uppercase">Solvari Consultancy</p>
+
+    <h1 class="mb-4 max-w-3xl text-6xl font-semibold tracking-[0.04em] text-white drop-shadow-lg sm:text-7xl">
+      <span class="block">Many problems.</span>
+      <span class="text-teal-300">One solution.</span>
+    </h1>
+
+    <p class="mb-10 max-w-2xl text-base leading-relaxed text-teal-100/80 sm:text-lg">
+      Partner with a team that blends product, engineering, and operations expertise to build resilient, scalable systems.
+      Work with an experienced engineer who communicates clearly and delivers value every sprint.
+    </p>
+
+    <p class="mb-10 max-w-2xl font-serif text-lg italic leading-relaxed text-teal-200/90 sm:text-xl">
+      “We make technical decisions that your team can maintain — not just ship and forget.”
+    </p>
+
+    <div class="flex flex-wrap items-center justify-center gap-4">
+      <a
+        href="/services"
+        class="inline-flex items-center justify-center rounded-full bg-teal-400 px-8 py-3 text-sm font-semibold text-dark-1 shadow-md transition hover:bg-teal-300"
+      >
+        Explore services
+      </a>
+      <a
+        href="#contact"
+        class="inline-flex items-center justify-center rounded-full border border-teal-400 bg-transparent px-8 py-3 text-sm font-semibold text-teal-200 transition hover:bg-white/10"
+      >
+        Get in touch
+      </a>
+    </div>
+
+    <div class="absolute bottom-8 flex flex-col items-center gap-2 text-sm text-teal-200/80">
+      <div class="h-2 w-2 rounded-full bg-teal-400 animate-[scrollBounce_1.8s_ease-in-out_infinite]" />
+      <span class="uppercase tracking-widest">Scroll</span>
+    </div>
+  </div>
+</section>

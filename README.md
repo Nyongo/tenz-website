@@ -1,10 +1,17 @@
-# Astro Starter Kit: Basics
+# Solvari Consulting Website
 
-```sh
-npm create astro@latest -- --template basics
-```
+This project is an Astro site scaffold for **Solvari Consulting** — "Many problems, one solution." It includes a services overview, a contact section, a blog, pricing information, service detail pages, and responsive design.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+> ⚡ Tip: Use `npm run dev` while building to see changes in real time.
+
+### Useful routes
+
+- `/` — Homepage
+- `/services` — Service categories and menu navigation
+- `/services/<service-slug>` — Individual service details
+- `/blog` — Blog list
+- `/pricing` — Pricing options
+- `/contact` — Contact form
 
 ## 🚀 Project Structure
 

@@ -1,23 +1,303 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+---
+import '../styles/global.css';
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+export interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title = 'Solvari Consulting', description = 'Many problems, one solution.' } = Astro.props;
+
+const siteName = 'Solvari Consulting';
+const robotsContent = 'index,follow';
+
+// Default social image (replace with a real OG image later)
+const ogImage = '/images/services/placeholder.svg';
+
+// Prefer absolute URLs when `site` is configured in `astro.config.mjs`
+const canonicalUrl = Astro.site ? new URL(Astro.url.pathname, Astro.site).toString() : null;
+const ogUrl = canonicalUrl ?? Astro.url?.toString?.() ?? '';
+
+const organizationJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: siteName,
+  url: canonicalUrl ?? undefined,
+  logo: '/favicon.svg',
+  description,
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Nairobi',
+    addressCountry: 'KE',
+  },
+};
+---
+
+<!doctype html>
+<html lang="en" class="h-full scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="robots" content={robotsContent} />
+    <meta name="theme-color" content="#06090F" />
+
+    {canonicalUrl ? <link rel="canonical" href={canonicalUrl} /> : null}
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    {ogUrl ? <meta property="og:url" content={ogUrl} /> : null}
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:alt" content={title} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+
+    <script type="application/ld+json" set:html={JSON.stringify(organizationJsonLd)} />
+  </head>
+  <body>
+    <div id="cursor"></div>
+    <div id="cursor-ring"></div>
+
+    <nav id="nav">
+      <div class="nav-brand">
+        <svg width="44" height="44" viewBox="0 0 80 80">
+          <polygon points="40,4 74,22 74,58 40,76 6,58 6,22" fill="#041A16" stroke="#14D4B8" stroke-width="3"/>
+          <path d="M24,32 L36,22 L44,22 L56,32 L56,44 L44,50 L36,50 L24,58 L24,66 L36,74 L56,62" fill="none" stroke="#FFF" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="40" cy="22" r="5" fill="#14D4B8"/>
+          <circle cx="40" cy="50" r="5" fill="#14D4B8"/>
+        </svg>
+        <div class="nav-brand-text">
+          <span class="n1">SOLVARI</span>
+          <span class="n2">CONSULTANCY</span>
+        </div>
+      </div>
+
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#solutions">Solutions</a></li>
+        <li><a href="#why">Why Us</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">GET IN TOUCH</button>
+    </nav>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer>
+      <div class="footer-grid">
+        <div class="fg-brand">
+          <div style="display:flex;align-items:center;gap:12px">
+            <svg width="40" height="40" viewBox="0 0 80 80" aria-hidden="true">
+              <polygon points="40,4 74,22 74,58 40,76 6,58 6,22" fill="#041A16" stroke="#14D4B8" stroke-width="3"/>
+              <path d="M24,32 L36,22 L44,22 L56,32 L56,44 L44,50 L36,50 L24,58 L24,66 L36,74 L56,62" fill="none" stroke="#FFF" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="40" cy="22" r="5" fill="#14D4B8"/>
+              <circle cx="40" cy="50" r="5" fill="#14D4B8"/>
+            </svg>
+            <div>
+              <div style="font-size:14px;font-weight:600;letter-spacing:5px;color:var(--white)">SOLVARI</div>
+              <div style="font-size:7px;letter-spacing:4px;color:var(--t400);margin-top:2px">CONSULTANCY</div>
+            </div>
+          </div>
+          <p class="fb-tagline">Many Problems.<br/>One Solution.</p>
+          <p class="fb-desc">IT services and project management consultancy based in Nairobi, Kenya. Solving forward — always.</p>
+        </div>
+        <div class="fg-col">
+          <h4>SERVICES</h4>
+          <ul>
+            <li><a href="#services">Software Development</a></li>
+            <li><a href="#services">Technical Consulting</a></li>
+            <li><a href="#services">DevOps &amp; Cloud</a></li>
+            <li><a href="#services">Data &amp; Integrations</a></li>
+            <li><a href="#services">Support &amp; Maintenance</a></li>
+          </ul>
+        </div>
+        <div class="fg-col">
+          <h4>SOLUTIONS</h4>
+          <ul>
+            <li><a href="#solutions">CoreBanking</a></li>
+            <li><a href="#solutions">BulkSMS</a></li>
+            <li><a href="#solutions">Accounting</a></li>
+            <li><a href="#solutions">Reconciliation</a></li>
+            <li><a href="#solutions">DigiKid</a></li>
+          </ul>
+        </div>
+        <div class="fg-col">
+          <h4>COMPANY</h4>
+          <ul>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#why">Why Solvari</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 SOLVARI CONSULTANCY · ALL RIGHTS RESERVED · NAIROBI, KENYA</p>
+        <div class="footer-social">
+          <a href="#" title="LinkedIn">in</a>
+          <a href="#" title="Twitter">𝕏</a>
+          <a href="#" title="Email">@</a>
+        </div>
+      </div>
+    </footer>
+
+    <script is:inline>
+      const cursor = document.getElementById('cursor');
+      const ring = document.getElementById('cursor-ring');
+      let mx = 0,
+        my = 0,
+        rx = 0,
+        ry = 0;
+
+      document.addEventListener('mousemove', (e) => {
+        mx = e.clientX;
+        my = e.clientY;
+        if (cursor) {
+          cursor.style.left = mx + 'px';
+          cursor.style.top = my + 'px';
+        }
+      });
+
+      function animRing() {
+        rx += (mx - rx) * 0.12;
+        ry += (my - ry) * 0.12;
+        if (ring) {
+          ring.style.left = rx + 'px';
+          ring.style.top = ry + 'px';
+        }
+        requestAnimationFrame(animRing);
+      }
+
+      animRing();
+
+      const hoverTargets = document.querySelectorAll('a,button,.sol-card,.service-card,.why-point');
+      hoverTargets.forEach((el) => {
+        el.addEventListener('mouseenter', () => {
+          if (cursor) {
+            cursor.style.width = '18px';
+            cursor.style.height = '18px';
+          }
+          if (ring) {
+            ring.style.width = '52px';
+            ring.style.height = '52px';
+          }
+        });
+        el.addEventListener('mouseleave', () => {
+          if (cursor) {
+            cursor.style.width = '10px';
+            cursor.style.height = '10px';
+          }
+          if (ring) {
+            ring.style.width = '36px';
+            ring.style.height = '36px';
+          }
+        });
+      });
+
+      const nav = document.getElementById('nav');
+      const navToggle = document.querySelector('.nav-toggle');
+      const navLinks = document.querySelectorAll('#nav .nav-links a');
+      const sections = Array.from(document.querySelectorAll('main section[id]'));
+
+      function updateActiveMenu() {
+        const scrollPos = window.scrollY + 120;
+        let currentId = 'hero';
+
+        sections.forEach((section) => {
+          if (section.offsetTop <= scrollPos) {
+            currentId = section.id;
+          }
+        });
+
+        navLinks.forEach((link) => {
+          link.classList.toggle('active', link.getAttribute('href') === `#${currentId}`);
+        });
+      }
+
+      function closeMobileNav() {
+        nav?.classList.remove('open');
+        if (navToggle) navToggle.setAttribute('aria-expanded', 'false');
+      }
+
+      function toggleMobileNav() {
+        nav?.classList.toggle('open');
+        if (navToggle) {
+          const expanded = nav?.classList.contains('open');
+          navToggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+        }
+      }
+
+      navToggle?.addEventListener('click', toggleMobileNav);
+
+      document.querySelectorAll('a[href^="#"]').forEach((a) => {
+        a.addEventListener('click', (e) => {
+          const href = (a.getAttribute('href') || '').trim();
+          if (!href.startsWith('#')) return;
+          e.preventDefault();
+          const t = document.querySelector(href);
+          if (t) t.scrollIntoView({ behavior: 'smooth' });
+          closeMobileNav();
+        });
+      });
+
+      const navCta = document.querySelector('.nav-cta');
+      navCta?.addEventListener('click', () => {
+        closeMobileNav();
+      });
+
+      window.addEventListener('scroll', () => {
+        nav?.classList.toggle('scrolled', window.scrollY > 60);
+        updateActiveMenu();
+      });
+
+      // Set initial active state on load
+      updateActiveMenu();
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add('visible');
+            }
+          });
+        },
+        { threshold: 0.12 }
+      );
+
+      document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+      document.querySelectorAll('a[href^="#"]').forEach((a) => {
+        a.addEventListener('click', (e) => {
+          const href = (a.getAttribute('href') || '').trim();
+          if (!href.startsWith('#')) return;
+          e.preventDefault();
+          const t = document.querySelector(href);
+          if (t) t.scrollIntoView({ behavior: 'smooth' });
+        });
+      });
+    </script>
+  </body>
+</html>
