@@ -1,7 +1,7 @@
 {
-  "name": "solvari-consulting",
+  "name": "tenz-technologies-website",
   "version": "0.1.0",
-  "description": "Marketing site for Solvari Consulting built with Astro.",
+  "description": "Marketing site for Tenz Technologies built with Astro.",
   "type": "module",
   "engines": {
     "node": ">=22.12.0"

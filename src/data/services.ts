@@ -23,252 +23,189 @@ const defaultImage = "/images/services/placeholder.svg";
 
 export const serviceCategories: ServiceCategory[] = [
   {
-    title: "Ray Services",
-    slug: "ray-services",
-    description: "Services to keep your business running smoothly.",
+    title: "Digital Banking Products",
+    slug: "digital-banking-products",
+    description: "Secure digital channels for modern banking operations.",
     items: [
       {
-        title: "Project Management",
-        slug: slugify("Project Management"),
+        title: "Mobile Banking",
+        slug: slugify("Mobile Banking"),
         description:
-          "Delivery oversight, roadmap planning, and stakeholder alignment.",
+          "Customer-friendly mobile banking experiences connected to core systems.",
         image: defaultImage,
       },
       {
-        title: "Technical Writing",
-        slug: slugify("Technical Writing"),
+        title: "Internet Banking",
+        slug: slugify("Internet Banking"),
         description:
-          "Clear docs, proposals, and technical narratives that stakeholders love.",
+          "Web banking portals for retail and business customers.",
         image: defaultImage,
       },
       {
-        title: "Resume Writing",
-        slug: slugify("Resume Writing"),
+        title: "Agency Banking",
+        slug: slugify("Agency Banking"),
         description:
-          "Position yourself with a resume that reflects your achievements and impact.",
+          "Agent channel tools for onboarding, transactions, and settlements.",
         image: defaultImage,
       },
       {
-        title: "Communications Consultancy",
-        slug: slugify("Communications Consultancy"),
+        title: "WhatsApp Banking",
+        slug: slugify("WhatsApp Banking"),
         description:
-          "Crafting messages, CRMs, and processes that keep teams aligned.",
+          "Conversational banking journeys on WhatsApp for always-on service.",
         image: defaultImage,
       },
       {
-        title: "Administrative Support",
-        slug: slugify("Administrative Support"),
+        title: "Payments Gateways",
+        slug: slugify("Payments Gateways"),
         description:
-          "Operational consistency through coordinated scheduling, tracking, and execution.",
-        image: defaultImage,
-      },
-      {
-        title: "Event Management & Production",
-        slug: slugify("Event Management & Production"),
-        description:
-          "Run workshops, launches, and gatherings with smooth logistics and follow-up.",
+          "Flexible payment orchestration for digital products and channels.",
         image: defaultImage,
       },
     ],
   },
   {
-    title: "Software & Development",
-    slug: "software-development",
-    description: "Full-stack development and architecture support.",
+    title: "VAS Services",
+    slug: "vas-services",
+    description: "Value-added communication and customer engagement services.",
     items: [
       {
-        title: "Software & Web Development",
-        slug: slugify("Software & Web Development"),
+        title: "Bulk SMS",
+        slug: slugify("Bulk SMS"),
         description:
-          "From prototypes to production, build web experiences that scale.",
+          "Enterprise-scale SMS distribution with campaign and alert support.",
         image: defaultImage,
       },
       {
-        title: "Custom Web Application Development",
-        slug: slugify("Custom Web Application Development"),
-        description: "Bespoke solutions for your unique business requirements.",
+        title: "USSD Solutions",
+        slug: slugify("USSD Solutions"),
+        description: "USSD workflows for onboarding, servicing, and transaction requests.",
         image: defaultImage,
       },
       {
-        title: "Mobile App Development",
-        slug: slugify("Mobile App Development"),
+        title: "Bulk Email Solution",
+        slug: slugify("Bulk Email Solution"),
         description:
-          "Cross-platform experiences that people enjoy using every day.",
+          "Reliable high-volume email communication for operations and campaigns.",
         image: defaultImage,
       },
       {
-        title: "API Design & Development",
-        slug: slugify("API Design & Development"),
+        title: "Airtime & Data Distribution",
+        slug: slugify("Airtime and Data Distribution"),
         description:
-          "Robust APIs that power integrations and scale alongside your product.",
+          "Automated airtime and data voucher distribution capabilities.",
         image: defaultImage,
       },
       {
-        title: "Database Design & Architecture",
-        slug: slugify("Database Design & Architecture"),
+        title: "Chatbots",
+        slug: slugify("Chatbots"),
         description:
-          "Data models and infrastructure that support reliable, fast queries.",
+          "Conversational bots for service requests, FAQs, and lead qualification.",
         image: defaultImage,
       },
       {
-        title: "Technical Consulting",
-        slug: slugify("Technical Consulting"),
+        title: "Social Media Integration",
+        slug: slugify("Social Media Integration"),
         description:
-          "Advisory sessions to help you choose the right architecture and tools.",
-        image: defaultImage,
-      },
-      {
-        title: "Software Architecture & System Design",
-        slug: slugify("Software Architecture & System Design"),
-        description:
-          "Design systems with ownership, observability, and evolution in mind.",
-        image: defaultImage,
-      },
-      {
-        title: "Technology Stack Advisory",
-        slug: slugify("Technology Stack Advisory"),
-        description:
-          "Select the right tooling and platforms for long-term success.",
-        image: defaultImage,
-      },
-      {
-        title: "Code Review Auditing",
-        slug: slugify("Code Review Auditing"),
-        description:
-          "Identify risky patterns and suggest improvements for maintainability.",
-        image: defaultImage,
-      },
-      {
-        title: "Legacy System Modernization",
-        slug: slugify("Legacy System Modernization"),
-        description:
-          "Modernize without rewriting everything—incremental, risk-aware upgrades.",
+          "Unified customer engagement through integrated social touchpoints.",
         image: defaultImage,
       },
     ],
   },
   {
-    title: "DevOps & Infrastructure",
-    slug: "devops-infrastructure",
-    description: "Cloud, CI/CD, and infrastructure automation.",
+    title: "Other Custom Solutions",
+    slug: "other-custom-solutions",
+    description: "Tailored enterprise systems for financial and operational efficiency.",
     items: [
       {
-        title: "Cloud Solutions & Migrations (AWS, GCP, Azure)",
-        slug: slugify("Cloud Solutions & Migrations"),
+        title: "Automated Reconciliation Solution",
+        slug: slugify("Automated Reconciliation Solution"),
         description:
-          "Move workloads to cloud safely with cost and performance alignment.",
+          "Automate transaction matching and exception handling for finance teams.",
         image: defaultImage,
       },
       {
-        title: "CI/CD Pipeline Setup",
-        slug: slugify("CI/CD Pipeline Setup"),
+        title: "Digital Loan Origination and Management Solution",
+        slug: slugify("Digital Loan Origination and Management Solution"),
         description:
-          "Automated build and deploy pipelines that reduce manual friction.",
+          "Digitize loan onboarding, approvals, disbursement, and repayment tracking.",
         image: defaultImage,
       },
       {
-        title: "Infrastructure as Code",
-        slug: slugify("Infrastructure as Code"),
+        title: "Agent Network Management Solution",
+        slug: slugify("Agent Network Management Solution"),
         description:
-          "Repeatable, versioned infrastructure built with Terraform, Pulumi, or similar.",
+          "Manage agent onboarding, monitoring, commissions, and settlements at scale.",
+        image: defaultImage,
+      },
+      {
+        title: "Digital Cash Management & Distribution Solutions",
+        slug: slugify("Digital Cash Management and Distribution Solutions"),
+        description:
+          "Improve cash flow visibility and distribution operations.",
+        image: defaultImage,
+      },
+      {
+        title: "Automated Leasing Solution",
+        slug: slugify("Automated Leasing Solution"),
+        description:
+          "Streamline lease lifecycle management from onboarding to collections.",
+        image: defaultImage,
+      },
+      {
+        title: "Finance & Accounting Module",
+        slug: slugify("Finance and Accounting Module"),
+        description:
+          "Integrated finance operations, reporting, and controls for growing firms.",
+        image: defaultImage,
+      },
+      {
+        title: "Payroll and HR Solution",
+        slug: slugify("Payroll and HR Solution"),
+        description:
+          "Automate payroll processing and human resource workflows.",
         image: defaultImage,
       },
     ],
   },
   {
-    title: "Data & Integrations",
-    slug: "data-integrations",
-    description: "Connecting systems and unlocking insights.",
+    title: "Other Services",
+    slug: "other-services",
+    description: "Technology advisory and implementation support services.",
     items: [
       {
-        title: "Third-Party API Integrations",
-        slug: slugify("Third-Party API Integrations"),
+        title: "Website Development",
+        slug: slugify("Website Development"),
         description:
-          "Connect the systems you rely on with robust integration patterns.",
+          "Build modern, responsive websites with strong user experience.",
         image: defaultImage,
       },
       {
-        title: "Data Engineering & Pipeline Development",
-        slug: slugify("Data Engineering & Pipeline Development"),
+        title: "Technology Consulting",
+        slug: slugify("Technology Consulting"),
         description:
-          "Reliable pipelines that move data where it needs to go with confidence.",
+          "Get strategic guidance for architecture, integrations, and digitization.",
         image: defaultImage,
       },
       {
-        title: "Business Intelligence & Reporting",
-        slug: slugify("Business Intelligence & Reporting"),
+        title: "Custom Solution Development",
+        slug: slugify("Custom Solution Development"),
         description:
-          "Actionable dashboards and reports for better decision making.",
+          "Develop bespoke systems around your organization's requirements.",
         image: defaultImage,
       },
       {
-        title: "Support & Maintenance",
-        slug: slugify("Support & Maintenance"),
+        title: "Hosting",
+        slug: slugify("Hosting"),
         description:
-          "Ongoing support to keep systems running and quietly improving.",
+          "Reliable deployment and hosting support for digital products.",
         image: defaultImage,
       },
       {
-        title: "Technical Due Diligence",
-        slug: slugify("Technical Due Diligence"),
+        title: "Technical Support",
+        slug: slugify("Technical Support"),
         description:
-          "Assess architecture, processes, and risk ahead of investment or acquisition.",
-        image: defaultImage,
-      },
-      {
-        title: "Performance Optimisation",
-        slug: slugify("Performance Optimisation"),
-        description:
-          "Find and fix bottlenecks to make systems run faster and cheaper.",
-        image: defaultImage,
-      },
-      {
-        title: "Ongoing Software Maintenance & Support",
-        slug: slugify("Ongoing Software Maintenance & Support"),
-        description:
-          "Keep software healthy with patching, updates, and preventative work.",
-        image: defaultImage,
-      },
-    ],
-  },
-  {
-    title: "Ready Solutions",
-    slug: "ready-solutions",
-    description: "Pre-built solutions to speed up delivery.",
-    items: [
-      {
-        title: "Core Banking Solution (MicroFinance, Banks & Saccos)",
-        slug: slugify("Core Banking Solution"),
-        description:
-          "A full banking backoffice platform designed for lending operations.",
-        image: defaultImage,
-      },
-      {
-        title: "BulkSMS",
-        slug: slugify("BulkSMS"),
-        description:
-          "High-volume messaging systems with delivery reporting and templates.",
-        image: defaultImage,
-      },
-      {
-        title: "Accounting Software",
-        slug: slugify("Accounting Software"),
-        description:
-          "Ledger and reporting tooling designed for cashflow visibility.",
-        image: defaultImage,
-      },
-      {
-        title: "Reconciliation Software",
-        slug: slugify("Reconciliation Software"),
-        description:
-          "Automated matching and exception handling for transactions.",
-        image: defaultImage,
-      },
-      {
-        title: "DigiKid (Student Tracking)",
-        slug: slugify("DigiKid"),
-        description:
-          "A student tracking platform to simplify attendance and progress metrics.",
+          "Ongoing operational and technical assistance for business continuity.",
         image: defaultImage,
       },
     ],

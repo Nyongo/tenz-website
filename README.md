@@ -1,6 +1,6 @@
-# Solvari Consulting Website
+# Tenz Technologies Website
 
-This project is an Astro site scaffold for **Solvari Consulting** — "Many problems, one solution." It includes a services overview, a contact section, a blog, pricing information, service detail pages, and responsive design.
+This project is an Astro site scaffold for **Tenz Technologies**. It includes a services overview, a contact section, a blog, pricing information, service detail pages, and responsive design.
 
 > ⚡ Tip: Use `npm run dev` while building to see changes in real time.
 
