@@ -11,8 +11,7 @@ const { title = 'Tenz Technologies', description = 'Reliable, secure and modern 
 const siteName = 'Tenz Technologies';
 const robotsContent = 'index,follow';
 
-// Default social image (replace with a real OG image later)
-const ogImage = '/images/services/placeholder.svg';
+const ogImage = '/branding/logo_transparent_background.png';
 
 // Prefer absolute URLs when `site` is configured in `astro.config.mjs`
 const canonicalUrl = Astro.site ? new URL(Astro.url.pathname, Astro.site).toString() : null;
@@ -23,7 +22,7 @@ const organizationJsonLd = {
   '@type': 'Organization',
   name: siteName,
   url: canonicalUrl ?? undefined,
-  logo: '/favicon.svg',
+  logo: '/branding/logo_transparent_background.png',
   description,
   address: {
     '@type': 'PostalAddress',
@@ -40,7 +39,7 @@ const organizationJsonLd = {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <meta name="robots" content={robotsContent} />
-    <meta name="theme-color" content="#06090F" />
+    <meta name="theme-color" content="#0a1a2e" />
 
     {canonicalUrl ? <link rel="canonical" href={canonicalUrl} /> : null}
 
@@ -60,7 +59,8 @@ const organizationJsonLd = {
     <meta name="twitter:image" content={ogImage} />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
 
@@ -71,18 +71,19 @@ const organizationJsonLd = {
     <div id="cursor-ring"></div>
 
     <nav id="nav">
-      <div class="nav-brand">
-        <svg width="44" height="44" viewBox="0 0 80 80">
-          <polygon points="40,4 74,22 74,58 40,76 6,58 6,22" fill="#041A16" stroke="#14D4B8" stroke-width="3"/>
-          <path d="M24,32 L36,22 L44,22 L56,32 L56,44 L44,50 L36,50 L24,58 L24,66 L36,74 L56,62" fill="none" stroke="#FFF" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
-          <circle cx="40" cy="22" r="5" fill="#14D4B8"/>
-          <circle cx="40" cy="50" r="5" fill="#14D4B8"/>
-        </svg>
+      <a class="nav-brand" href="/" aria-label="Tenz Technologies home">
+        <img
+          class="site-logo"
+          src="/branding/white_logo_transparent_background.png"
+          alt=""
+          width="200"
+          height="48"
+        />
         <div class="nav-brand-text">
-          <span class="n1">TENZ</span>
-          <span class="n2">TECHNOLOGIES</span>
+          <span class="n1">Tenz</span>
+          <span class="n2">Technologies</span>
         </div>
-      </div>
+      </a>
 
       <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
         <span></span>
@@ -109,18 +110,15 @@ const organizationJsonLd = {
     <footer>
       <div class="footer-grid">
         <div class="fg-brand">
-          <div style="display:flex;align-items:center;gap:12px">
-            <svg width="40" height="40" viewBox="0 0 80 80" aria-hidden="true">
-              <polygon points="40,4 74,22 74,58 40,76 6,58 6,22" fill="#041A16" stroke="#14D4B8" stroke-width="3"/>
-              <path d="M24,32 L36,22 L44,22 L56,32 L56,44 L44,50 L36,50 L24,58 L24,66 L36,74 L56,62" fill="none" stroke="#FFF" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <circle cx="40" cy="22" r="5" fill="#14D4B8"/>
-              <circle cx="40" cy="50" r="5" fill="#14D4B8"/>
-            </svg>
-            <div>
-              <div style="font-size:14px;font-weight:600;letter-spacing:5px;color:var(--white)">TENZ</div>
-              <div style="font-size:7px;letter-spacing:4px;color:var(--t400);margin-top:2px">TECHNOLOGIES</div>
-            </div>
-          </div>
+          <a href="/" class="footer-brand-link" aria-label="Tenz Technologies home">
+            <img
+              class="site-logo site-logo--footer"
+              src="/branding/white_logo_transparent_background.png"
+              alt="Tenz Technologies"
+              width="180"
+              height="44"
+            />
+          </a>
           <p class="fb-tagline">Increase efficiency.<br/>Through technology.</p>
           <p class="fb-desc">Mission-critical technology solutions provider based in Nairobi, Kenya serving East and Central Africa.</p>
         </div>
